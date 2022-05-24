@@ -1,4 +1,4 @@
-#!/bin/sh -
+#!/bin/bash
 clear
-sleep 2
+open homebrew.command
 osascript -e 'tell application "Terminal" to close first window' & exit
