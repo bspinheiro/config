@@ -6,5 +6,5 @@ chmod -R go-w "$(brew --prefix)/share/zsh"
 echo "export PATH=$HOME/.homebrew/bin:$PATH" >> ~/.zshrc
 echo "export HOMEBREW_CASK_OPTS="--appdir=~/Applications" >> ~/.zshrc
 echo "export HOMEBREW_NO_ENV_HINTS=1" >> ~/.zshrc
-~/.homebrew/bin/brew install pidof
-~/.homebrew/bin/pidof terminal|xargs kill
+~/.homebrew/bin/brew install pidof # ~/.homebrew/bin/pidof terminal|xargs kill
+osascript -e 'tell application "Terminal" to close first window' & exit
