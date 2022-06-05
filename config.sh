@@ -1,6 +1,6 @@
 #!/bin/bash
-APP=homebrew
 
+install() {
 echo "Setting up $APP..."
 (open $APP.command)
 
@@ -15,5 +15,9 @@ done
 
 echo DONE!
 rm ~/._$APP
+}
 
-#osascript -e 'tell application "Terminal" to close first window' & exit
+APP=homebrew && install
+APP=spaceship && install
+
+
