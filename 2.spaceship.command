@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-export APP='spaceship'
+APP='spaceship'
 sleep 1
 
 echo $'\nInstalling Fonts...'

@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-export APP='homebrew'
+APP='homebrew'
 sleep 1
 
 test -f ~/.zshrc && rm ~/.zshrc

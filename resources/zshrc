@@ -1,0 +1,48 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+# Homebrew
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+alias invoke='_invoke(){brew install "$1"} && _invoke'
+alias revoke='_revoke(){brew uninstall "$1"} && _revoke'
+
+# Mac App Store Install by Name
+alias masi='mash() {mas search "$1"|head -n 1|cut -c4-14|xargs mas install} && mash'
+
+# Shut
+alias shut='_shut(){pidof "$1"|xargs kill} && _shut'
+
+# Shortcuts
+alias oa='open -a'
+alias md='mkdir'
+alias rd='rmdir'
+alias stt='subl'
+alias wake='caffeinate -u -t 1'
+alias sleep='pmset sleepnow'
+alias logout="osascript -e 'tell app \"System Events\" to  «event aevtrlgo»'"
+alias reboot="osascript -e 'tell app \"System Events\" to restart'"
+alias shutdown="osascript -e 'tell app \"System Events\" to shut down'"
+
+#Ruby Setup
+eval "$(rbenv init -)"
+export GEM_HOME="$HOME/.gem"
+
+
+# Dev-Mode
+# alias dev-mode='_dev-mode(){cp ~/Library/Preferences/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist.std; rm -f ~/Library/Preferences/com.apple.dock.plist; cp ~/Library/Preferences/com.apple.dock.plist.dev ~/Library/Preferences/com.apple.dock.plist; killall dock} && _dev-mode'
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
