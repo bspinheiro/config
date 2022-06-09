@@ -1,3 +1,4 @@
+- Alias
 - iTerm
 - iTerm Dynamic Setup
 - VIM
