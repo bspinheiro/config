@@ -1,5 +1,8 @@
 #!/bin/bash
 
+ADR='https://github.com/bspinheiro/config/raw/master/app.pack'
+CFG=$(mktemp -d)
+
 setup() {
 APPNAME=$(echo $APP | cut -f 2 -d ".")
 CFG_STEP=$(expr $CFG_STEP + 1)
@@ -35,8 +38,15 @@ CFG_STEP=0
 for APP in *.*.command; do setup; done;
 }
 
-ADR='https://github.com/bspinheiro/config/raw/master/cmdpack.tar'
+cleanup() {
+  rm -rf "$CFG"
+}
+
+trap cleanup EXIT
+trap cleanup SIGINT
+
+pushd > /dev/null && cd $CFG
+
 download && unpack && install
 
-#APP=homebrew && install
-#APP=spaceship && install
+popd > /dev/null
