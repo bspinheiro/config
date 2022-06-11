@@ -4,13 +4,16 @@ APP='aliases'
 ZRC='~/.zshrc'
 sleep 1
 
-echo $'\nPopulating Aliases...'
-echo '## Hardware Commands' >> $ZRC 
-# echo 'alias wake=''caffeinate -u -t 1'
-# alias sleep='pmset sleepnow'
-# alias logout="osascript -e 'tell app \"System Events\" to  «event aevtrlgo»'"
-# alias reboot="osascript -e 'tell app \"System Events\" to restart'"
-# alias shutdown="osascript -e 'tell app \"System Events\" to shut down'"
+patch() {
+  for $FILE in *.*.patch; do
+    PATCH=$(echo $FILE|cut -d"." -f2)
+    echo $'\nAliasing '"$PATCH..."
+    cat $FILE >> $ZRC
+    sleep .5	
+  done 
+}
+
+patch
 
 echo "kill $PPID" > ._$APP
 osascript -e 'tell application "Terminal" to close first window' & exit

@@ -1,0 +1,26 @@
+###
+## User Preferences
+#
+alias cls='clear'
+alias cd..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias md='mkdir'
+alias rd='rm -rf'
+alias la='ls -la'
+alias ll='ls -l'
+alias ls='la'
+alias l='ls -1a'
+alias pu='pushd .'
+alias po='popd'
+alias o='open'
+alias oa='open -a'
+alias tar='tar -cJf'
+alias untar='tar -xf'
+alias reload='exec $0 --login'
+alias wget='wget -c'
+alias v='vim'
+alias vcfg='vim ~/.vimrc'
+alias zcfg='vim ~/.zshrc && reload'
+
+ 

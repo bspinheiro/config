@@ -1,0 +1,10 @@
+###
+## Git Gimmicks
+# 
+alias ga='git add .'
+alias gs='git status'
+alias gc='git commit -m'
+alias gp='git push origin master'
+alias gclr='for d in */ ; do rm -rf .git/; done'
+
+

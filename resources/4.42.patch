@@ -1,0 +1,11 @@
+###
+## 42 Tools
+#
+export USER='bda-silv'
+export MAIL='bda-silv@student.42.rio'
+alias n='norminette -R CheckForbiddenSourceHeader'
+alias c='cc -Wall -Wextra -Werror *.c && ./a.out && rm a.out'
+alias p='cd ~ && mkdir -p ~/Projects && test -d ~/Projects/$(ls -lr Projects/ | tail -1 | rev | cut -d" " -f1 | rev) && cd ~/Projects/$(ls -lr Projects/ | tail -1 | rev | cut -d" " -f1 | rev) || cd ~/Projects'
+alias t='pu && cd ~/Projects/libft-unit-test && make f && cat result.log && po && rm -f *.o && rm -f *.a'
+
+
